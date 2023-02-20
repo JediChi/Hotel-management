@@ -15,7 +15,7 @@ exports.CreateUserSchema = Joi.object({
     .lowercase()
     .trim(),
     // roles: Joi.string().lowercase().trim(),
-    isAdmin: Joi.boolean().default(false),
+    // isAdmin: Joi.boolean().default(false),
 });
 
 exports.LoginUserSchema = Joi.object({

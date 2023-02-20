@@ -25,11 +25,14 @@ const userSchema = new Schema(
       trim: true,
 
     },
-    isAdmin: {
-      type: Boolean,
-      default: false
-    },
-    // roles: ["admin", "guest"],
+    // isAdmin: {
+    //   type: Boolean,
+    //   default: false
+    // },
+    roles: {type: String,
+      enum: ["admin", "guest"],
+      default: "guest"
+     },
     // permissions: ["add", "edit", "delete", "list"],
 
     tokens: [{
