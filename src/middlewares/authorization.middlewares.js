@@ -1,19 +1,16 @@
 const authorize = async (req, res, next) => {
   try {
-    if (req.user.roles === "admin") {
-      return res.send({
-        sucess: true,
-        data: `Access granted`,
+    if (req.user.roles !=="admin") {
+       
+      return res.status(403).send({
+        success: false,
+        data: `Acess denied, can only view`,
       });
     }
     next();
 
-    return res.status(403).send({
-      success: false,
-      data: `Acess denied, can only view`,
-    });
   } catch (error) {
-    res.status(401).send({ success: false, error: "Unauthorized" });
+    return res.status(500).send({ success: false, error: "Failed" });
   }
 
   // if (!req.user.isAdmin) {
