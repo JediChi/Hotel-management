@@ -10,9 +10,9 @@ roomTypeRouter.post("/", [
   validator(CreateRoomTypeSchema)
 ],[auth, authorize], roomTypeController.create);
 
-roomTypeRouter.get("/",[auth, authorize], roomTypeController.list);
+roomTypeRouter.get("/",[auth], roomTypeController.list);
 
-roomTypeRouter.get("/:id",[auth, authorize], roomTypeController.retrieve);
+roomTypeRouter.get("/:id",[auth], roomTypeController.retrieve);
 
 roomTypeRouter.patch("/:id", [auth, authorize], [validator(UpdateRoomTypeSchema)], roomTypeController.update);
 

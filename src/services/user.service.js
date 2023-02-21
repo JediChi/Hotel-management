@@ -41,7 +41,7 @@ class UserService {
   
 
   async delete() {
-    await User.remove();
+    await User.findOneAndRemove();
   
   }
 }
